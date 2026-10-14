@@ -17,7 +17,7 @@ function execute(unit) {
         console: {log: (...args) => output.push(JSON.parse(JSON.stringify(args)))},
         Date: SampleDate
     });
-    vm.runInContext(code, context, {filename: unit + "/solution.js"});
+    vm.runInContext(code, context, {filename: `${unit}/solution.js`});
     return {output, evaluate: expression => vm.runInContext(expression, context)};
 }
 
